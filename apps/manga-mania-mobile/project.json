@@ -1,0 +1,9 @@
+{
+  "name": "manga-mania-mobile",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/manga-mania-mobile/src",
+  "projectType": "application",
+  "tags": [],
+  "// targets": "to see all targets run: nx show project manga-mania-mobile --web",
+  "targets": {}
+}

@@ -1,0 +1,9 @@
+{
+  "name": "scanner",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "features/scanner/src",
+  "projectType": "library",
+  "tags": [],
+  "// targets": "to see all targets run: nx show project scanner --web",
+  "targets": {}
+}

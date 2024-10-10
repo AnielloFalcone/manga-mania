@@ -1,0 +1,26 @@
+{
+  "name": "manga-mania-api",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/manga-mania-api/src",
+  "projectType": "application",
+  "tags": [],
+  "targets": {
+    "serve": {
+      "executor": "@nx/js:node",
+      "defaultConfiguration": "development",
+      "dependsOn": ["build"],
+      "options": {
+        "buildTarget": "manga-mania-api:build",
+        "runBuildTargetDependencies": false
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "manga-mania-api:build:development"
+        },
+        "production": {
+          "buildTarget": "manga-mania-api:build:production"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,25 @@
+name: CI
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  main:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '22'
+      - run: yarn set version stable
+      - run: yarn install
+      - uses: nrwl/nx-set-shas@v3
+      
+      - run: yarn nx format:check
+      - run: yarn nx affected -t lint --parallel=3
+      - run: yarn nx affected -t test --parallel=3
+      - run: yarn nx affected -t build --parallel=3
